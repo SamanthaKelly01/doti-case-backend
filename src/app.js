@@ -1,51 +1,56 @@
 const express = require("express");
+const rotas = require("./routes");
 
 const app = express();
 
-app.get("", (req, res) => {
-    return res.json({
-        message: "teste"
-    })
-})
+app.use(express.json());
+app.use(rotas);
 
-app.get("/home", (req, res) => {
-    return res.json({
-        message: "Teste home"
-    })
-})
-
-app.get("/produtos", (req, res) => {
-    return res.json({
-        message: "Teste produtos"
-    })
-})
-
-app.get("/blog", (req, res) => {
-    return res.json({
-        message: "Teste blog"
-    })
-})
-
-app.get("/login", (req, res) => {
-    return res.json({
-        message: "Teste login"
-    })
-})
-
-app.get("/cadastro", (req, res) => {
-    return res.json({
-        message: "Teste cadastro"
-    })
-})
-
-app.get("/perfil", (req, res) => {
-    return res.json({
-        message: "Teste perfil"
-    })
-})
+module.exports = app; 
 
 
-app.listen(8000, () => console.log("Servidor Rodando"));
+// app.get("", (req, res) => {
+//     return res.json({
+//         message: "teste"
+//     })
+// })
+
+// app.get("/home", (req, res) => {
+//     return res.json({
+//         message: "Teste home"
+//     })
+// })
+
+// app.get("/produtos", (req, res) => {
+//     return res.json({
+//         message: "Teste produtos"
+//     })
+// })
+
+// app.get("/blog", (req, res) => {
+//     return res.json({
+//         message: "Teste blog"
+//     })
+// })
+
+// app.get("/login", (req, res) => {
+//     return res.json({
+//         message: "Teste login"
+//     })
+// })
+
+// app.get("/cadastro", (req, res) => {
+//     return res.json({
+//         message: "Teste cadastro"
+//     })
+// })
+
+// app.get("/perfil", (req, res) => {
+//     return res.json({
+//         message: "Teste perfil"
+//     })
+// })
+
 
 
 
