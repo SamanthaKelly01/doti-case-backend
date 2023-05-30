@@ -10,7 +10,7 @@ class UsuarioController {
             res.status(200).json(novoUsuario);
             
         } catch (error) {
-            res.status(500).json({message: "Internal Server Error", error: error.message });
+            res.status(500).json({message: "Oops!, Algo deu errado...", error: error.message });
         }
         
     }
@@ -22,7 +22,7 @@ class UsuarioController {
             res.status(200).json(usuarios);
             
         } catch (error) {
-            res.status(500).json({message: "Internal Server Error", error: error.message });   
+            res.status(500).json({message: "Oops!, Algo deu errado...", error: error.message });   
         }
         
     }
@@ -42,7 +42,7 @@ class UsuarioController {
     
         }catch (error) {
             
-            res.status(500).json({message: "Internal Server Error", error: error.message });
+            res.status(500).json({message: "Oops!, Algo deu errado...", error: error.message });
         }
     }
 
@@ -60,7 +60,7 @@ class UsuarioController {
     
         }catch (error) {
             
-             res.status(500).json({message: "Internal Server Error", error: error.message });
+             res.status(500).json({message: "Oops!, Algo deu errado...", error: error.message });
         }
     }
 
