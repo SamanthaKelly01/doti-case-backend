@@ -6,7 +6,7 @@ const UsuarioValidator = require("./Validators/UsuarioValidator");
 const SessoesValidator = require("./Validators/SessoesValidator");
 const AuthValidator = require("./Validators/AuthValidator");
 const verificarJwt = require("./Middlewares/verificarJwt");
-const verificarUsuario = require("./Middlewares/verificarUsuario");
+const verificarUsuario = require("./Middlewares/verificarUsuario")
 
 const rotas = Router();
 
