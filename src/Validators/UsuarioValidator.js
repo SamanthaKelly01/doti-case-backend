@@ -29,7 +29,6 @@ const update = validateRequest({
         senha: z.string().optional,
         endereco: z.string().optional,
         descricao: z.string().optional,
-        
 
     }),
     params: z.object({
@@ -40,6 +39,5 @@ module.exports = {
     create,
     destroy,
     update,
-
 }
 
