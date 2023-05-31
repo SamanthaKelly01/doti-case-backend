@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 async function startDB(){
-    await mongoose.connect('mongodb+srv://teste:pWCpcOxfA8L9KMg0@pontodoti.o6h56fs.mongodb.net/?retryWrites=true&w=majority')
+    await mongoose.connect(process.env.MONGO_URI)
 }
-//pWCpcOxfA8L9KMg0
+
 module.exports = startDB;

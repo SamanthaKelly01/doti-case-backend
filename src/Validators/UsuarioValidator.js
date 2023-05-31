@@ -21,15 +21,13 @@ const destroy = validateRequest({
     }),
 });
 
-
 const update = validateRequest({
     body: z.object({
-        nome: z.string().optional,
-        email: z.string().email("O email não é válido").optional,
-        senha: z.string().optional,
-        endereco: z.string().optional,
-        descricao: z.string().optional,
-        
+        nome: z.optional(z.string()),
+        email: z.optional(z.string().email("O email não é válido")),
+        senha: z.optional(z.string()),
+        endereco: z.optional(z.string()),
+        descricao: z.optional(z.string()),
 
     }),
     params: z.object({
@@ -40,6 +38,5 @@ module.exports = {
     create,
     destroy,
     update,
-
 }
 
