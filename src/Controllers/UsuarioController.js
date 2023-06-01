@@ -10,7 +10,11 @@ class UsuarioController {
             res.status(200).json(novoUsuario);
             
         } catch (error) {
-            res.status(500).json({message: "Oops!, Algo deu errado...", error: error.message });
+            console.log(error);
+            if (error.keyPattern.email) {
+                return res.status(500).json({message: "Oops! Email já registrado...", error: error.message });
+            }
+            res.status(500).json({message: "Oops! Nome de usuário já registrado...", error: error.message });
         }
         
     }
