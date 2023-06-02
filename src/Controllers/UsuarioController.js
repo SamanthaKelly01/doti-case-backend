@@ -1,4 +1,5 @@
 const UsuarioModel = require("../Models/UsuarioModel");
+const jwt = require("jsonwebtoken");
 
 class UsuarioController {
 
@@ -10,7 +11,6 @@ class UsuarioController {
             res.status(200).json(novoUsuario);
             
         } catch (error) {
-            console.log(error);
             if (error.keyPattern.email) {
                 return res.status(500).json({message: "Oops! Email já registrado...", error: error.message });
             }
@@ -59,8 +59,12 @@ class UsuarioController {
                 return res.status(404).json({message: "Usuário não encontrado" });
     
             const usuario = await usuarioEncontrado.set(req.body).save();
+
+            const token = jwt.sign({
+                usuario
+            }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRE_IN })
     
-            res.status(200).json(usuario);
+            res.status(200).json({ token });
     
         }catch (error) {
             

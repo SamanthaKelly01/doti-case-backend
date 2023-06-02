@@ -17,9 +17,9 @@ rotas.delete('/usuarios/:id', verificarJwt, verificarUsuario, UsuarioValidator.d
 rotas.put('/usuarios/:id', verificarJwt, verificarUsuario, UsuarioValidator.update, UsuarioController.update);
 
 //sessoes:
-rotas.post('/sessoes', verificarJwt, verificarUsuario, SessoesValidator.create, SessoesController.create);
+rotas.post('/sessoes', verificarJwt, SessoesValidator.create, SessoesController.create);
 rotas.get('/sessoes', verificarJwt, SessoesController.read);
-rotas.delete('/sessoes/:id_usuario', verificarJwt, verificarUsuario, SessoesValidator.destroy, SessoesController.delete);
+rotas.delete('/sessoes/:id_usuario', verificarJwt, SessoesValidator.destroy, SessoesController.delete);
 
 //AUTH
 
